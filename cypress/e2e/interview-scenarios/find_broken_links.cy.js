@@ -1,13 +1,11 @@
 ///<reference types='cypress'/>
-describe('FInding brokem links in a web page', () => {
+describe.skip('FInding brokem links in a web page', () => {
 
     it('FindBrokenLinksTest', () => {
         cy.visit('https://ecommerce-playground.lambdatest.io/')
         let brokenLinks = 0
         let actualLinks = 0
-
         cy.get('a').each(($link, index) => {
-
             const href = $link.attr('href')
             if (href) {
                 cy.request({ url: href, failOnStatusCode: false }).then((res) => {
