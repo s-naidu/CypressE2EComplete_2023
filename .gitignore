@@ -139,6 +139,8 @@ dist
 node_modules
 logs
 cypress/logs
+cypress/reports
+cypress/downloads
 cypress/test-results
 cypress/screenshots
 cypress/videos

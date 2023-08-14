@@ -133,8 +133,29 @@
         All the screenshots are stored into cypress/screenshots folder
 
 ## 8. Reports:
-        All the reports are stored into the cypress/report folder
+        Need to install following plug-ins for cypress-mochawesome-reporter
+        step :1
+        npm i --save-dev cypress-mochawesome-reporter
+       
+        Step :2
+        import following under cypress/support/e2e.js file:
+        import 'cypress-mochawesome-reporter/register';
+        
+        Step :3
+        Edit config file (cypress.config.js by default) as follows
+                  const { defineConfig } = require('cypress');
 
+                  module.exports = defineConfig({
+                  reporter: 'cypress-mochawesome-reporter',
+                         e2e: {
+                    setupNodeEvents(on, config) {
+                       require('cypress-mochawesome-reporter/plugin')(on);
+                   },
+                 },
+              })
+        Step :4 run the spec files
+        Step :5 Open the reports and verify the results under path \cypress\reports 
+        
 
 
 
