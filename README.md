@@ -133,6 +133,7 @@
         All the screenshots are stored into cypress/screenshots folder
 
 ## 8. Reports:
+<<<<<<< Updated upstream
         Need to install following plug-ins for cypress-mochawesome-reporter
         step :1
         npm i --save-dev cypress-mochawesome-reporter
@@ -144,6 +145,62 @@
         Step :3
         Edit config file (cypress.config.js by default) as follows
                   const { defineConfig } = require('cypress');
+=======
+    step:1
+        All the reports are stored into the cypress/results folder
+        Install the following packages using npm
+        mochawesome@7.1.3
+        mochawesome-merge@4.2.2
+        mochawesome-report-generator@6.2.0
+    step:2 Add following code on cypress.config.js
+
+        import { defineConfig } from 'cypress'
+
+        export default defineConfig({
+        // https://github.com/adamgruber/mochawesome
+        reporter: 'mochawesome',
+        reporterOptions: {
+         useInlineDiffs: true,
+         embeddedScreenshots: true,
+        reportDir: 'cypress/results',
+        reportFilename: '[name].html',
+        overwrite: true,
+        html: true,
+        json: true,
+        },
+         })    
+    step:3
+    add following code on cypress/support/e2e.js file
+import addContext from 'mochawesome/addContext'
+
+const titleToFileName = (title) =>
+  title.replace(/[:\/]/g, '')
+
+Cypress.on('test:after:run', (test, runnable) => {
+  if (test.state === 'failed') {
+    let parent = runnable.parent
+    let filename = ''
+    while (parent && parent.title) {
+      filename = `${titleToFileName(
+        parent.title,
+      )} -- ${filename}`
+      parent = parent.parent
+    }
+    filename += `${titleToFileName(
+      test.title,
+    )} (failed).png`
+    addContext(
+      { test },
+      `../screenshots/${Cypress.spec.name}/${filename}`,
+    )
+  }
+  // always add the video
+  addContext({ test }, `../videos/${Cypress.spec.name}.mp4`)
+})  
+Step:4 Run the test and verify the results under results folder   
+
+        
+>>>>>>> Stashed changes
 
                   module.exports = defineConfig({
                   reporter: 'cypress-mochawesome-reporter',

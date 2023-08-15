@@ -139,9 +139,13 @@ dist
 node_modules
 logs
 cypress/logs
+<<<<<<< Updated upstream
 cypress/reports
 cypress/downloads
 cypress/test-results
+=======
+cypress/results
+>>>>>>> Stashed changes
 cypress/screenshots
 cypress/videos
 cypress/fixtures/graphQl/responses
