@@ -24,7 +24,7 @@ describe('Example to demonstrate handling of JavaScript Alerts, Confirm, Prompt 
   it('Handling JS Confirm - Click Cancel', () => {
     cy.contains('Click for JS Confirm').click()
     cy.on('window:confirm', () => false)
-    cy.get('#result').should('have.text', 'You clicked: Ok')
+    cy.get('#result').should('have.text', 'You clicked: Cancel')
   })
 
   it('Handling JS Prompt - Input text in prompt, Click OK and Validate Input Text', () => {

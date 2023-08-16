@@ -13,6 +13,7 @@ module.exports = defineConfig({
     json: true,
   },
   watchForFileChanges:false,
+  chromeWebSecurity:false,
   reporter: 'cypress-mochawesome-reporter',
 
   e2e: {
