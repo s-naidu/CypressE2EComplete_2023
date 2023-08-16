@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 reporter: 'cypress-mochawesome-reporter',
 
 module.exports = defineConfig({
+  projectId: "yaewra",
   reporter: 'mochawesome',
   reporterOptions: {
     useInlineDiffs: true,
