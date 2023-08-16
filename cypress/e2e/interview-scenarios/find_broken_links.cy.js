@@ -1,5 +1,5 @@
 ///<reference types='cypress'/>
-describe.skip('FInding brokem links in a web page', () => {
+describe('FInding brokem links in a web page', () => {
 
     it('FindBrokenLinksTest', () => {
         cy.visit('https://ecommerce-playground.lambdatest.io/')
