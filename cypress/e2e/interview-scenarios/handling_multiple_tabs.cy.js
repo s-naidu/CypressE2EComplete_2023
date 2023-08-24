@@ -24,9 +24,4 @@ describe('Example to demonstrate the handling of new browser windows in cypress'
     });
     cy.get('h1').should('contain', 'Welcome to the-internet');
   })
-  
-
-
-
-
 })
