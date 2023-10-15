@@ -15,7 +15,7 @@ describe('Get api user tests', () => {
       }
     }).then((res) => {
       expect(res.status).to.eq(200)
-        expect(res.body[0]).to.have.property('email','surya_kaur@lang-yost.example')
+        expect(res.body[0]).to.have.property('email','joshi_satish_i@hahn.example')
         expect(res.body[0]).to.have.property('id', 5359972)
       //expect(res.body).to.deep.eq(expectedbody)
     })
