@@ -159,3 +159,4 @@ cypress/parallel-weights.json
 performance-results
 pa11y.json
 
+/cypress/e2e/APITesting/putuser.cy.js
