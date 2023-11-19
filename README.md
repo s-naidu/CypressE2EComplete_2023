@@ -8,7 +8,11 @@
     4. Run the command 'npm init' to create a package
     5. Type  “npm install cypress –save-dev”
     6. Type “npx cypress open” and select the required options like config, browser ,spec files etc.. 
+    
+# commands to run specific test file
 
+specific browser with headed :npx cypress run --spec .\cypress\e2e\interview-scenarios\FIRST_TEST_IN_CYPRESS.cy.js --browser chrome --headed 
+specific browser headless :npx cypress run --spec .\cypress\e2e\interview-scenarios\FIRST_TEST_IN_CYPRESS.cy.js --browser chrome --headless 
 
 ## 2. Folder Strcture 
     1. cypress
