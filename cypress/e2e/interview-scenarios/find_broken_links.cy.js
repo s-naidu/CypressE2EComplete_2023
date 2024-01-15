@@ -28,4 +28,30 @@ describe('FInding brokem links in a web page', () => {
             cy.log(`*** active links *** ${actualLinks}`)
         })
     })
+
+
+    it('find links',()=>{
+
+        cy.visit('https://ecommerce-playground.lambdatest.io/')
+        let blinks=0;
+        let alinks=0;
+        cy.get('a').each(($lnk,index)=>{
+
+            const href=$lnk.attr('href')
+            if(href){
+                cy.request({url:href,failOnStatusCode: false }).then((res)=>{
+                    if(res.status>400){
+                        cy.log(`link ${index+1} is broken ${href} `)
+                        blinks++
+                    }else{
+                        cy.log(`link ${index+1} is active `)
+                    }
+                })
+            }
+
+        }).then(($link)=>{
+            const total=$link.length
+        })
+
+    })
 })

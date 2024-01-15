@@ -3,10 +3,10 @@
     "",
     "\\cypress",
     "\\cypress\\e2e",
-    "\\cypress\\e2e\\APITesting",
+    "\\cypress\\e2e\\interview-scenarios",
     "\\cypress\\fixtures",
     "\\cypress\\support"
   ],
-  "SelectedNode": "\\cypress\\support\\commands.js",
+  "SelectedNode": "\\cypress\\e2e\\interview-scenarios",
   "PreviewInSolutionExplorer": false
 }
